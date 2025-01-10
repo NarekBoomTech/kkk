@@ -1,0 +1,452 @@
+
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta http-equiv="X-UA-Compatible" content="ie=edge"/><script src="https://calendar.boomte.ch/js/googleApi.js?v=1.3"></script><script src="//static.parastorage.com/services/js-sdk/1.425.0/js/wix.min.js" defer="defer"></script><script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js" defer="defer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier/1.0.3/oms.min.js" defer="defer"></script><script src="https://apis.google.com/js/api.js" defer="defer"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-80GL533WJG"></script><script>window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-80GL533WJG', {
+        cookie_flags: 'samesite=none;secure'
+    });</script><title>Boom Calendar</title>
+
+<script>
+    console.log("Asdjskldjalksdjsakl");
+    
+</script>
+
+    <!-- <script defer="defer" src="https://calendar.boomte.ch/widget/calendar_widget.js?v=6028"></script> -->
+    
+    </head><body><style wix-style>/* container */
+     .wrapper .shadow,
+     .loader-overlay {
+         border-radius: {{style.calendarRadius 0}}px;
+         box-shadow: 0 0 {{style.calendarBorderSize 0}}px 0 {{style.calendarBorderColor color-3}};
+     }
+
+     .shadow {
+       overflow: hidden;
+     }
+
+     .wrapper .shadow{
+       margin: {{style.calendarBorderSize 0}}px
+     }
+
+     .loader div {
+       border-color: {{style.calendarBorderColor color-3}}
+     }
+
+     .loader-overlay {
+       height: calc(100vh - 2*{{style.calendarBorderSize 20}}px);
+     }
+
+     .fc-view-harness {
+         padding: {{style.bodyPadding 10}}px;
+     }
+
+     /* header */
+     .fc .fc-toolbar.fc-header-toolbar {
+         background: {{style.headerFontColorBg color-8}};
+     }
+
+     .bc-search-input {
+       border-radius: calc(.5*{{style.calendarRadius 0}}px);
+     }
+
+     .bc-search-input,
+     .bc-search-input::placeholder {
+         border-color: {{style.buttonBg1 color-1}};
+       color: {{style.buttonBg1 color-1}};
+         {{style.buttonFs Body-S}};
+     }
+
+     .bc-search-result {
+       background: {{style.headerFontColor color-1}};
+       color: {{style.headerFontColorBg color-8}};
+       border: 1px solid {{style.headerFontColorBg color-8}};
+     }
+
+     .bc-search-title,
+     .bc-search-item:hover::after {
+       border-bottom-color: {{style.headerFontColorBg color-8}};
+     }
+
+     .spinner .path {
+         stroke: {{style.headerFontColorBg color-8}};
+     }
+
+     .fc .fc-button-primary.fc-prev-button,
+     .fc .fc-button-primary.fc-next-button,
+     .fc .fc-toolbar-title,
+     .fc-toolbar-title,
+     .fc .fc-button .fc-icon,
+     .fc-header-toolbar .fc-agendaTitle-button,
+     .fc-header-toolbar .fc-timelineTitle-button,
+     .fc-header-toolbar .fc-crossTitle-button,
+     .fc-header-toolbar .fc-cardTitle-button,
+     .fc-header-toolbar .fc-mapTitle-button,
+     .fc .fc-agendaTitle-button:hover,
+     .fc-header-toolbar .fc-timelineTitle-button:hover,
+     .fc-header-toolbar .fc-crossTitle-button:hover,
+     .fc .fc-cardTitle-button:hover,
+     .fc .fc-mapTitle-button:hover,
+     .fc .fc-agendaTitle-button:not(:disabled):active,
+     .fc-header-toolbar .fc-timelineTitle-button:not(:disabled):active,
+      .fc-header-toolbar .fc-crossTitle-button:not(:disabled):active,
+     .fc .fc-cardTitle-button:not(:disabled):active,
+     .fc .fc-mapTitle-button:not(:disabled):active,
+     .fc .fc-prev-button:not(:disabled):active,
+     .fc .fc-next-button:not(:disabled):active,
+     .bc-search-bar-parent .icon-search:before {
+         color: {{style.headerFontColor color-1}};
+         {{style.dateFontStyle Body-L}};
+     }
+
+     .fc .fc-header-toolbar .fc-sideMenu-button > div span{
+       background-color: {{style.headerFontColor color-1}};
+     }
+
+     .fc-header-toolbar .fc-toolbar-chunk:nth-of-type(3) .fc-button,
+     .bc-search-bar-parent span[class*='icon'] {
+         color: {{style.buttonBg1 color-1}};
+         {{style.buttonFs Body-S}};
+     }
+
+     .fc-header-toolbar .fc-toolbar-chunk .fc-button-group>.fc-button.fc-button-active {
+         border-bottom-width: {{style.buttonBorderSize 1}}px;
+         border-color: {{style.buttonBg1 color-1}}
+     }
+
+     .boom_calendar_logo p{
+       color: {{color-9}}
+     }
+
+     /* calendar */
+
+     .limit-expired {
+       {{style.headerFontStyle Body-M}};
+     }
+
+     .fc .fc-daygrid-week-number,
+     .fc-multimonth-title,
+     .fc-col-header a.fc-col-header-cell-cushion,
+     .fc-col-header-cell a.fc-col-header-cell-cushion,
+     .fc .fc-list-day-cushion{
+       color: {{style.dateColor color-9}};
+         {{style.headerFontStyle Body-S}};
+     }
+
+     .fc-daygrid-day-top a.fc-daygrid-day-number {
+         color: {{style.numberFontColor color-4}};
+         {{style.numberFontStyle Body-S}};
+     }
+
+     .fc-dark-mode-events .fc-event-title,
+     .fc-dark-mode-events .fc-event-time {
+       color: {{style.eventFontColor color-1}};
+         {{style.eventFontStyle Body-S}};
+     }
+
+     .fc .fc-event-title,
+     .fc-list-event-title,
+     .fc-event-time {
+       {{style.eventFontStyle Body-S}};
+     }
+
+     .fc-more-link {
+     color: {{style.numberFontColor color-4}};
+       {{style.numberFontStyle Body-S}};
+     }
+
+     .fc-light-mode-events .fc-daygrid-event.fc-daygrid-block-event .fc-event-title > span {
+       background-color: {{style.bgCal1 color-1}};
+     }
+
+     .fc-timegrid-event-harness-inset .fc-timegrid-event .fc-event-main {
+       border-left-color: {{style.bgCal1 color-1}};
+       border-bottom-color: {{style.bgCal1 color-1}};
+       border-right-color: {{style.bgCal1 color-1}};
+     }
+
+     .fc .fc-daygrid-day,
+     .fc-timegrid-slot.fc-timegrid-slot-lane.fc-timegrid-slot-minor,
+     .fc-theme-standard .fc-timegrid-col:not(:first-of-type),
+     .fc-direction-ltr.fc-theme-standard .fc-timegrid .fc-col-header-cell {
+       border-right-color: {{style.borderColor color-2}};
+       border-right-width: {{style.borderSize 1}}px;
+     }
+
+     .fc .fc-daygrid .fc-daygrid-day,
+     .fc-col-header .fc-timegrid-axis.fc-scrollgrid-shrink,
+     .fc-scrollgrid tbody .fc-scrollgrid-section:not(.fc-scrollgrid-section-body) .fc-timegrid-divider,
+     .fc-timegrid .fc-timegrid-slot.fc-timegrid-slot-lane {
+       border-bottom-color: {{style.borderColor color-2}};
+       border-bottom-width: {{style.borderSize 1}}px;
+     }
+
+
+     .agenda-item:not(:last-of-type){
+       border-bottom: 1px solid {{style.borderColor color-2}};
+     }
+
+     .agenda-item-last-of-month{
+          border-bottom: 4px solid {{style.headerFontColorBg color-8}} !important;
+      }
+
+     .fc .fc-dark-mode-events + .fc-popover .fc-event-title {
+         color: {{style.eventFontColor color-1}};
+     }
+
+     .fc-popover {
+       margin-left: calc(-{{style.calendarBorderSize/2 0}}px);
+     }
+
+     .mobile-monthly-events-list-texts{
+       {{style.numberFontStyle Body-S}};
+     color: {{style.numberFontColor color-4}};
+     }
+
+     .fc .fc-scrollgrid-shrink-cushion,
+     .fc .fc-timegrid-slot:empty:before,
+     .fc-list-event-time,
+     .fc-list-event-title{
+       color: {{style.numberFontColor color-4}};
+       {{style.numberFontStyle Body-S}};
+     }
+
+     /* categories */
+     .bc-categories-section {
+         border-top-color: {{style.borderColor color-2}};
+     }
+
+     .bc-categories-section button {
+       {{style.buttonFs Body-S}};
+     }
+
+     .bc-category-item.uncategorised {
+       color: {{style.borderColor color-2}}
+     }
+
+     .bc-agenda-desc-color {
+       color: {{style.agendaColor color-10}};
+     }
+
+         .agenda-item-date-container .timebox, .agenda-item-date-container .datebox {
+            {{style.agendaDateFontStyle Body-M}};
+        }
+
+      .bookings-color-class {
+        border-color: {{style.bookingsEventColor color-8}} !important;
+      }
+
+      .bookings-color-class > div {
+        color: {{style.bookingsEventColor color-8}} !important;
+      }
+
+      .wixEvents-color-class {
+        border-color: {{style.wixEventsEventColor color-8}} !important;
+      }
+
+      .wixEvents-color-class > div {
+        color: {{style.wixEventsEventColor color-8}} !important;
+      }
+
+     .agenda-item-title {
+       {{style.agendaTitleFontStyle Body-L}};
+     }
+    /* Cross view */
+     .cross-item-title {
+      color: {{style.crossTitleFontColor color-10}};
+       {{style.crossTitleFontStyle Body-L}};
+     }
+
+     .cross-item-description, .cross-location, .cross-location .icon-Location,  .cross-listed-details *, .cross-guest-limit, .cross-add-share-icons-wrapper  {
+        color :{{style.crossDesriptionColor color-10}};
+      }
+      .cross-item-description, .cross-location, .cross-location .icon-Location, .cross-listed-details *, .cross-guest-limit, .cross-add-share-icons-wrapper, .cross-add-share-icons-wrapper  button {
+        {{style.crossDescriptionFontStyle Body-M}};
+      }
+
+     .cross-item-divider {
+       background : {{style.crossDividerColor color-2}};
+     }
+
+     .cross-item-date {
+       color:  {{style.crossDateColor color-10}};
+       {{style.crossDateStyle Body-M}};
+     }
+
+     .cross-item-container {
+       background:  {{style.crossDateContainerColor color-2}};
+       {{style.crossDateContainerFont Body-M}};
+     }
+
+     .cross-agenda-item-section .datebox {
+       {{style.agendaDateFontStyle Body-M}};
+     }
+
+     .agenda-desc-and-other-info-container {
+       {{style.agendaDescFontStyle Body-M}};
+     }
+
+     /* Card */
+     .bc-card-wrapper {
+       background: {{style.cardBgColor color-1}};
+     }
+
+     .card-item-event-title {
+       color: {{style.cardTitleFontColor color-5}};
+       {{style.cardTitleFontStyle Body-L}};
+     }
+
+     .bc-card-desc-font-and-color {
+       color: {{style.cardDescriptionFontColor color-4}};
+       {{style.cardDescriptionFontStyle Body-M}};
+     }
+
+     .bc-card-desc-font,
+     .bc-card-desc-font a {
+       {{style.cardDescriptionFontStyle Body-M}};
+     }
+
+     .bc-card-desc-color {
+       color: {{style.cardDescriptionFontColor color-4}};
+     }
+
+     .bc-link-color [class^="icon-"],
+     .bc-link-color [class*=" icon-"],
+     .bc-link-color a,
+     a[href] {
+       color: {{style.colorPopupWebsite color-9}};
+     }
+
+     .bc-card-section-font h3 {
+       color: {{style.cardSectionFontColor color-4}};
+       border-color: {{style.cardDividerColor color-4}};
+     {{style.cardSectionFontStyle Body-L}};
+     }
+
+     .bc-button {
+       border-radius: {{style.buttonsBorderRadius 0}}px;
+       background: {{style.buttonsBg color-8}};
+       color: {{style.buttonsFontColor color-1}};
+       {{style.buttonsFontStyle Body-S}};
+     }
+
+     .bc-mobile-view .fc-view-harness{
+      padding-left: 0;
+      padding-right: 0;
+     }
+     /* tooltip */
+     .bc_tooltip_content{
+     background: {{style.bgPopup color-1}};
+    }
+
+     .bc_tooltip_arrow::after{
+       border-color: {{style.bgPopup color-1}} transparent transparent transparent
+     }
+
+     h3.bc-tooltip-titles-font-and-color,
+     .bc-tooltip-titles-font-and-color h3 {
+       color: {{style.colorInfoTitle color-5}};
+       border-color: {{style.colorPopupLine color-5}};
+       {{style.fontInfoTitle Body-L}};
+     }
+
+     .bc-tooltip-desc-font-and-color:not(.bc-section-title) {
+       color:{{style.colorDescription color-5}};
+       {{style.fontDescription Body-S}};
+     }
+
+     .bc-tooltip-desc-font {
+       {{style.fontDescription Body-S}};
+     }
+
+     .bc-tooltip-and-color {
+       color:{{style.colorDescription color-5}};
+     }
+
+     .bc_no_events_title,
+     .fc-list-empty-cushion {
+       color:{{style.agendaColor color-10}};
+       {{style.agendaTitleFontStyle Body-L}};
+     }
+
+     .bc_tooltip_content::-webkit-scrollbar-thumb,
+     .fc-dayGridYear-view .fc-scrollgrid-section-body .fc-scroller::-webkit-scrollbar-thumb,
+     .fc-multimonth::-webkit-scrollbar-thumb,
+     .bc-timeline-view-content-wrapper::-webkit-scrollbar-thumb {
+       background-color: {{style.colorDescription color-5}};
+     }
+
+     .bc_tooltip_content,
+     .fc-multimonth,
+     .fc-dayGridYear-view .fc-scrollgrid-section-body .fc-scroller {
+     /*  scrollbar-color: {{style.colorDescription color-5}} transparent;*/
+     }
+
+     .bc-search-result::-webkit-scrollbar-thumb {
+       background-color: {{style.headerFontColorBg color-8}};
+     }
+
+     .bc-search-result {
+      /* scrollbar-color: {{style.colorDescription color-5}} transparent;*/
+       {{style.buttonFs Body-S}};
+     }
+
+     /* Popover */
+     .fc .fc-popover {
+       box-shadow: 0 0 {{style.calendarBorderSize 0}}px 0 {{style.calendarBorderColor color-3}} !important;
+       {{style.eventFontStyle Body-S}};
+     }
+
+     .fc-theme-standard .fc-popover-header {
+       background: {{style.headerFontColorBg color-8}};
+       color: {{style.headerFontColor color-1}};
+     }
+
+     .fc-popover::-webkit-scrollbar-thumb {
+       background: {{style.headerFontColorBg color-8}};
+     }
+
+     .fc-popover {
+      /* scrollbar-color: {{style.headerFontColorBg color-8}} transparent;*/
+     }
+
+     /* Timeline */
+
+     .timeline-event-title-font {
+       color: {{style.timelineTitleFontColor color-7}};
+       {{style.timelineTitleFontStyle Body-L}};
+     }
+
+     .timeline-event-desc-font {
+       color: {{style.timelineDescriptionFontColor color-4}};
+       {{style.timelineDescriptionFontStyle Body-L}};
+     }
+
+     .timeline-line-background-color {
+       background-color: {{style.timelineLineColor color-4}};
+     }
+
+     .timeline-date-font {
+       color: {{style.timelineDateFontColor color-4}};
+       {{style.timelineDateFontStyle Body-L}};
+     }
+
+     .timeline-highlight-event-backgroud {
+       background-color: {{style.timelineEventBackground color-4}};
+     }
+
+     /* Timeline */
+
+     /* Sync Loader */
+
+      .sync-loader-square {
+        background: {{style.syncLoaderColor color-7}};;
+      }
+
+      .sync-loader-square:nth-child(3) {
+        background: {{style.syncLoaderColorDark color-12}};;
+      }
+     /* Sync Loader */</style></body></html>
